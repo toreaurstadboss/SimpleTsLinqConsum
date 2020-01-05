@@ -25,6 +25,11 @@ export class AppComponent {
   someGeneratedNumbers: number[];
 
   constructor() {
+    const someNums = [1, 3, 4, 5, 8, 11, 14, 13, 12, 18];
+    const onlyEvenNumbers = someNums.RemoveWhere<number>(x => x % 2 === 0);
+    if (onlyEvenNumbers !== null) {
+    }
+
     this.starwarsMovies = JSON.stringify(StarWarsMovies);
     this.firstMovieWithBoba = StarWarsMovies.FirstOrDefault<Movie>(
       m => m.main_characters.indexOf("Boba Fett") >= 0
